@@ -362,6 +362,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
+    align-items: stretch;
 }
 
 .package {
@@ -460,12 +461,14 @@ body {
     color: var(--text-main);
     margin-bottom: var(--spacing-md);
     font-weight: 600;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .package__features {
     list-style: none;
     text-align: left;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: 0;
     flex-grow: 1;
 }
 
@@ -480,6 +483,8 @@ body {
 
 .package>.btn {
     margin-top: auto;
+    flex-shrink: 0;
+    align-self: stretch;
 }
 
 /* ============================================
@@ -600,16 +605,17 @@ body {
     }
 
     .packages {
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         align-items: stretch;
     }
 
     .package {
-        flex: 1;
+        height: 100%;
     }
 
     .package--featured {
-        transform: scale(1.05);
+        transform: scale(1.02);
         z-index: 1;
     }
 
